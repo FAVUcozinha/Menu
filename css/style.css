@@ -1,3 +1,11 @@
+/* Importação da fonte */
+@font-face {
+    font-family: 'Basic Choice';
+    src: url('../fonts/Basic Choice 2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Estilo global */
 body {
     font-family: Arial, sans-serif;
@@ -63,6 +71,7 @@ header {
     color: #F4E6CB; /* Cor do texto dos botões */
     padding: 20px 0; /* Ajusta o padding */
     font-size: 20px; /* Tamanho de fonte para a versão mobile */
+    font-family: 'Basic Choice', Arial, sans-serif; /* Aplica a fonte personalizada */
     text-decoration: none;
     border-radius: 25px; /* Borda arredondada para os botões */
     text-align: center;
