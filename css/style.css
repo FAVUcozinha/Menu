@@ -20,7 +20,7 @@ header {
 
 .header-image {
     width: 100%;
-    height: auto;
+    height: 200%; /* Aumenta a altura da imagem topo.png ao dobro da altura atual */
     display: block;
     object-fit: cover; /* A imagem vai se ajustar ao tamanho sem distorcer */
 }
@@ -33,8 +33,8 @@ header {
 }
 
 .main-image {
-    width: 60%; /* Reduz a imagem favu.png em 20% em relação ao tamanho original */
-    height: auto;
+    width: 600px; /* Tamanho fixo da imagem alterado para 600px */
+    height: auto; /* A altura será proporcional à largura */
     display: block;
     margin: 0 auto;
 }
@@ -146,7 +146,7 @@ footer {
 
 .footer-image {
     width: 100%; /* A imagem ocupa 100% da largura da página */
-    height: auto; /* A altura será proporcional à largura */
+    height: 130%; /* Aumenta a altura da imagem roda.png em 30% */
     display: block; /* Remove espaços abaixo da imagem */
     object-fit: cover; /* A imagem irá cobrir a área sem distorcer */
     margin: 0; /* Remove qualquer margem da imagem */
