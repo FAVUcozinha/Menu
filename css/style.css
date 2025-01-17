@@ -44,28 +44,48 @@ header {
     background-color: #F4E6CB; /* Cor de fundo da seção de botões */
     padding: 30px 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Empilha os botões */
+    align-items: center; /* Garante que os botões fiquem centralizados */
     gap: 20px; /* Espaço entre os botões */
 }
 
 .button {
     background-color: #7FB1C8; /* Cor de fundo dos botões */
     color: #F4E6CB; /* Cor do texto dos botões */
-    padding: 3vw 6vw; /* Ajusta o tamanho proporcional ao tamanho da tela */
-    font-size: 4vw; /* Ajusta o tamanho da fonte proporcional ao tamanho da tela */
+    padding: 20px 40px; /* Ajusta o tamanho do padding */
+    font-size: 20px; /* Tamanho de fonte para a versão mobile */
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
     transition: background-color 0.3s;
 }
 
-.button:hover {
-    background-color: #333;
-    color: #FFF;
+/* Estilos para a versão mobile */
+@media (max-width: 768px) {
+    .buttons-container {
+        flex-direction: column; /* Empilha os botões na versão mobile */
+        align-items: center; /* Centraliza os botões */
+    }
+
+    .button {
+        font-size: 20px; /* Tamanho de fonte menor para a versão mobile */
+        padding: 20px 40px; /* Ajusta o padding na versão mobile */
+    }
+}
+
+/* Estilos para a versão web */
+@media (min-width: 769px) {
+    .button {
+        font-size: 50px; /* Tamanho de fonte maior para a versão web */
+        padding: 30px 60px; /* Ajuste de padding na versão web */
+    }
 }
 
 /* Slideshow - Ajuste para imagens proporcionais e sem bordas */
