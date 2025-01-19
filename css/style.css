@@ -1,66 +1,206 @@
-Httml 
+/* Importação da Fonte */
+@font-face {
+    font-family: 'Basic Choice';
+    src: url('../fonts/Basic Choice 2.ttf') format('truetype'); /* Verifique o caminho correto */
+}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAVU - Cozinha Afetiva</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- Cabeçalho -->
-    <header>
-        <img src="images/topo.png" alt="Imagem Cabeçalho" class="header-image">
-    </header>
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E09f41;
+    color: #ED704F;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-    <!-- Conteúdo Principal -->
-    <main>
-        <!-- Imagem Central -->
-        <section class="main-content">
-            <img src="images/favu.png" alt="Imagem FAVU" class="main-image">
-        </section>
+/* Cabeçalho */
+header {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
 
-        <!-- Seção dos Botões -->
-        <div class="buttons-section">
-            <div class="buttons-container">
-                <a href="https://favucozinha.github.io/Quemsomos/" class="button">Conheça a FAVU</a>
-                <a href="https://tinyurl.com/MenuFavu" class="button">Cardápio</a>
-                <a href="https://www.instagram.com/favucozinha/" class="button">Vem seguir a gente!</a>
-                <a href="https://wa.me/558199591775" class="button">Faça seu pedido!</a>
-            </div>
-        </div>
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
 
-        <!-- Slideshow -->
-        <section class="slideshow-section">
-            <div class="slideshow">
-                <div class="slide"><img src="images/S01.jpg" alt="Imagem 1"></div>
-                <div class="slide"><img src="images/S02.jpg" alt="Imagem 2"></div>
-                <div class="slide"><img src="images/S03.jpg" alt="Imagem 3"></div>
-                <div class="slide"><img src="images/S04.jpg" alt="Imagem 4"></div>
-                <div class="slide"><img src="images/S05.jpg" alt="Imagem 5"></div>
-                <div class="slide"><img src="images/S06.jpg" alt="Imagem 6"></div>
-                <div class="slide"><img src="images/S07.jpg" alt="Imagem 7"></div>
-                <div class="slide"><img src="images/S08.jpg" alt="Imagem 8"></div>
-                <div class="slide"><img src="images/S09.jpg" alt="Imagem 9"></div>
-                <div class="slide"><img src="images/S010.jpg" alt="Imagem 10"></div>
-                <div class="slide"><img src="images/S011.png" alt="Imagem 11"></div>
-                <div class="slide"><img src="images/S012.jpg" alt="Imagem 12"></div>
-                <div class="slide"><img src="images/S013.png" alt="Imagem 13"></div>
-                <div class="slide"><img src="images/S014.jpg" alt="Imagem 14"></div>
-            </div>
-        </section>
-    </main>
+/* Conteúdo Principal */
+.main-content {
+    text-align: center;
+    margin-top: 20px;
+    flex-grow: 1;
+}
 
-    <!-- Rodapé -->
-    <footer>
-        <img src="images/roda.png" alt="Imagem de rodapé" class="footer-image">
-    </footer>
+.main-image {
+    width: 100%; /* Ajuste para ocupar a mesma largura que o cabeçalho */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
-    <!-- Script JavaScript -->
-    <script src="js/scripts.js"></script>
-</body>
-</html>
+/* Seção dos Botões */
+.buttons-section {
+    background-color: #F4E6CB;
+    padding: 15px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+}
 
-O que precisa corrigir, mandar código completo
+/* Botões */
+.button {
+    background-color: #7FB1C8;
+    color: #F4E6CB;
+    padding: 15px 0;
+    font-size: 20px;
+    font-family: 'Basic Choice', Arial, sans-serif;
+    text-decoration: none;
+    border-radius: 25px;
+    text-align: center;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 20px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+/* Versão Mobile */
+@media (max-width: 768px) {
+    .header-image,
+    .main-image {
+        width: 100%; /* Garante que ambas as imagens tenham a mesma largura */
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        font-size: 20px;
+        padding: 20px 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        border-radius: 25px;
+    }
+
+    .slideshow-section {
+        height: 30vh;
+    }
+}
+
+/* Versão Web */
+@media (min-width: 769px) {
+    .buttons-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .button {
+        font-size: 30px;
+        padding: 15px 20px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        white-space: nowrap;
+        height: auto;
+        box-sizing: border-box;
+        border-radius: 25px;
+    }
+}
+
+/* Slideshow */
+.slideshow-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    height: 50vh;
+}
+
+.slideshow {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slideAnimation 112s infinite;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    opacity: 0;
+    animation: fadeInOut 112s infinite;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+/* Animação para transição dos slides */
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    6.67% { transform: translateX(-100%); }
+    13.33% { transform: translateX(-200%); }
+    20% { transform: translateX(-300%); }
+    26.67% { transform: translateX(-400%); }
+    33.33% { transform: translateX(-500%); }
+    40% { transform: translateX(-600%); }
+    46.67% { transform: translateX(-700%); }
+    53.33% { transform: translateX(-800%); }
+    60% { transform: translateX(-900%); }
+    66.67% { transform: translateX(-1000%); }
+    73.33% { transform: translateX(-1100%); }
+    80% { transform: translateX(-1200%); }
+    86.67% { transform: translateX(-1300%); }
+    93.33% { transform: translateX(-1400%); }
+    100% { transform: translateX(-1500%); }
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    4.17%, 95.83% { opacity: 1; }
+}
+
+/* Rodapé */
+footer {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    position: relative;
+}
+
+.footer-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
