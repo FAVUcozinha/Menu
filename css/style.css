@@ -100,6 +100,39 @@ footer {
     padding: 0;
 }
 
+/* Slideshow */
+.slideshow-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    height: 50vh;
+}
+
+.slideshow {
+    display: flex;
+    width: calc(100% * 15); /* Ajusta a largura para 15 slides */
+    animation: slideAnimation 30s linear infinite; /* Duração ajustada */
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+/* Animação do slideshow */
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
 /* Versão Mobile */
 @media (max-width: 768px) {
     .header-image,
@@ -147,59 +180,4 @@ footer {
         box-sizing: border-box;
         border-radius: 25px;
     }
-}
-
-/* Slideshow */
-.slideshow-section {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin: 0;
-    height: 50vh;
-}
-
-.slideshow {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    animation: slideAnimation 120s infinite;
-}
-
-.slide {
-    width: 100%;
-    flex-shrink: 0;
-    opacity: 0;
-    animation: fadeInOut 120s infinite;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin: 0;
-}
-
-/* Animação para transição dos slides */
-@keyframes slideAnimation {
-    0% { transform: translateX(0); }
-    6.67% { transform: translateX(-100%); }
-    13.33% { transform: translateX(-200%); }
-    20% { transform: translateX(-300%); }
-    26.67% { transform: translateX(-400%); }
-    33.33% { transform: translateX(-500%); }
-    40% { transform: translateX(-600%); }
-    46.67% { transform: translateX(-700%); }
-    53.33% { transform: translateX(-800%); }
-    60% { transform: translateX(-900%); }
-    66.67% { transform: translateX(-1000%); }
-    73.33% { transform: translateX(-1100%); }
-    80% { transform: translateX(-1200%); }
-    86.67% { transform: translateX(-1300%); }
-    93.33% { transform: translateX(-1400%); }
-    100% { transform: translateX(-1500%); }
-}
-
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    4.17%, 95.83% { opacity: 1; }
 }
