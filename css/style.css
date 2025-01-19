@@ -1,9 +1,7 @@
-/* Importação da fonte */
+/* Importação da Fonte */
 @font-face {
     font-family: 'Basic Choice';
-    src: url('../fonts/Basic Choice 2.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../fonts/Basic Choice 2.ttf') format('truetype'); /* Verifique o caminho correto */
 }
 
 /* Estilo global */
@@ -41,8 +39,7 @@ header {
 }
 
 .main-image {
-    width: auto;
-    max-width: 100%;
+    width: 50%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -64,44 +61,83 @@ header {
     align-items: center;
     gap: 10px;
     width: 100%;
+    max-width: 100%; /* Garantir que a largura do contêiner dos botões seja 100% */
 }
 
+/* Botões */
 .button {
     background-color: #7FB1C8;
     color: #F4E6CB;
-    padding: 20px 0;
+    padding: 15px 0;
     font-size: 20px;
-    font-family: 'Basic Choice', Arial, sans-serif;
+    font-family: 'Basic Choice', Arial, sans-serif; /* Fonte alterada aqui */
     text-decoration: none;
     border-radius: 25px;
     text-align: center;
     transition: background-color 0.3s;
-    width: calc(100% - 40px);
+    width: 100%; /* Garantir que os botões ocupem toda a largura disponível */
+    max-width: 100%; /* Largura máxima 100% */
     margin: 0 20px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 /* Versão Mobile */
 @media (max-width: 768px) {
     .buttons-container {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
     }
 
     .button {
         font-size: 20px;
         padding: 20px 0;
-        width: calc(100% - 40px);
-        margin: 0 20px;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        border-radius: 25px;
+    }
+
+    .slideshow-section {
+        height: 30vh;
     }
 }
 
 /* Versão Web */
 @media (min-width: 769px) {
+    .buttons-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%; /* Garantir que o contêiner ocupe toda a largura */
+        max-width: 100%; /* Garantir que a largura do contêiner dos botões seja 100% */
+        margin: 0 auto;
+    }
+
     .button {
-        font-size: 50px;
-        padding: 30px 60px;
-        width: calc(100% - 40px);
-        margin: 0 20px;
+        font-size: 30px;
+        padding: 15px 20px;
+        width: 100%;
+        max-width: 100%; /* Largura total do botão */
+        margin: 0;
+        white-space: nowrap;
+        height: auto;
+        box-sizing: border-box;
+        border-radius: 25px;
+    }
+
+    /* Ajuste para que os botões ocupem a largura correspondente ao arquivo "topo.png" */
+    .buttons-section {
+        width: 100%; /* Faz com que a largura da seção dos botões corresponda à largura total */
+        max-width: 100%; /* Limita a largura da seção dos botões */
+        margin: 0 auto;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 100%; /* Não ultrapassar a largura da imagem de topo */
     }
 }
 
@@ -118,14 +154,14 @@ header {
     display: flex;
     width: 100%;
     height: 100%;
-    animation: slideAnimation 112s linear infinite;
+    animation: slideAnimation 112s infinite;
 }
 
 .slide {
     width: 100%;
     flex-shrink: 0;
     opacity: 0;
-    animation: fadeInOut 112s linear infinite;
+    animation: fadeInOut 112s infinite;
 }
 
 .slide img {
@@ -152,7 +188,7 @@ header {
     80% { transform: translateX(-1200%); }
     86.67% { transform: translateX(-1300%); }
     93.33% { transform: translateX(-1400%); }
-    100% { transform: translateX(0); } /* Não há intervalo, volta imediatamente para a primeira imagem */
+    100% { transform: translateX(-1500%); }
 }
 
 @keyframes fadeInOut {
